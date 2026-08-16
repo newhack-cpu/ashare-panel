@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8"><title>A股量化研究面板</title>
+<style>
+body{margin:0;background:#0b1220;color:#e2e8f0;font-family:'Segoe UI','Microsoft YaHei',sans-serif;}
+.wrap{max-width:1120px;margin:0 auto;padding:24px;}
+h1{font-size:22px;margin:0 0 4px;}
+h2{font-size:16px;margin:28px 0 10px;color:#93c5fd;}
+.sub{color:#64748b;font-size:12px;}
+.badge{display:inline-block;background:#1e3a5f;color:#7dd3fc;border:1px solid #1d4ed8;border-radius:20px;padding:2px 12px;font-size:12px;margin-left:10px;}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px;}
+.kpi{background:#111a2c;border:1px solid #1e293b;border-radius:12px;padding:14px;}
+.kpi .v{font-size:22px;font-weight:600;}
+.kpi .l{color:#64748b;font-size:12px;margin-top:4px;}
+table{width:100%;border-collapse:collapse;background:#111a2c;border-radius:12px;overflow:hidden;}
+th,td{padding:8px 10px;text-align:left;font-size:13px;border-bottom:1px solid #1e293b;}
+th{color:#94a3b8;font-size:12px;background:#0f172a;}
+.mono{font-family:Consolas,monospace;}
+.dim{color:#64748b;}
+.chartbox{background:#111a2c;border:1px solid #1e293b;border-radius:12px;padding:14px;}
+.legend span{margin-right:16px;font-size:12px;color:#94a3b8;}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+.note{background:#1a1f2e;border-left:3px solid #f59e0b;padding:10px 14px;border-radius:8px;font-size:12.5px;color:#cbd5e1;margin-top:14px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.card{background:#111a2c;border:1px solid #1e293b;border-radius:12px;padding:16px;}
+</style></head><body><div class="wrap">
+<h1>A股量化研究面板 · 低波动规则 <span class="badge">模拟盘观察级</span></h1>
+<div class="sub">数据 as-of 2026-08-14（Tushare 全市场） · 生成 2026-08-16 · 规则：市值top300 × 12月波动率最低 · 月频换仓（T+1开盘）· 仅研究用途，不构成投资建议</div>
+
+<div class="kpis">
+<div class="kpi"><div class="v" style="color:#f87171">-2.16%</div><div class="l">当前组合自 08-03 建仓</div></div>
+<div class="kpi"><div class="v">+0.52%</div><div class="l">历史首周平均（54次）</div></div>
+<div class="kpi"><div class="v">-1.44% ~ +2.51%</div><div class="l">历史首周 90% 区间</div></div>
+<div class="kpi"><div class="v">+0.86%</div><div class="l">历史整月平均</div></div>
+<div class="kpi"><div class="v">08-31</div><div class="l">下次换仓（信号日）</div></div>
+</div>
+
+<h2>📊 测试期净值：低波动30 vs 市值300等权 vs 沪深300（2022-01 ~ 2026-08，含成本）</h2>
+<div class="chartbox">
+<svg width="940" height="340" viewBox="0 0 940 340"><polyline points="8.0,212.6 L25.1,221.8 L42.2,227.8 L59.3,227.4 L76.4,220.2 L93.6,228.9 L110.7,227.8 L127.8,240.1 L144.9,247.6 L162.0,217.2 L179.1,224.2 L196.2,217.4 L213.3,216.4 L230.4,207.2 L247.6,175.6 L264.7,175.7 L281.8,182.0 L298.9,159.1 L316.0,173.2 L333.1,166.4 L350.2,168.3 L367.3,165.9 L384.4,165.3 L401.6,144.3 L418.7,125.6 L435.8,124.5 L452.9,114.6 L470.0,102.2 L487.1,100.5 L504.2,91.8 L521.3,111.5 L538.4,47.3 L555.6,75.7 L572.7,64.7 L589.8,39.8 L606.9,52.4 L624.0,62.5 L641.1,59.1 L658.2,55.5 L675.3,36.2 L692.4,27.1 L709.6,24.7 L726.7,22.9 L743.8,43.7 L760.9,27.5 L778.0,31.0 L795.1,33.1 L812.2,43.4 L829.3,33.3 L846.4,37.1 L863.6,39.6 L880.7,34.5 L897.8,76.9 L914.9,19.6 L932.0,39.7" fill="none" stroke="#34d399" stroke-width="2.0"/>
+<polyline points="8.0,212.6 L25.1,224.1 L42.2,233.4 L59.3,228.0 L76.4,218.6 L93.6,226.4 L110.7,227.8 L127.8,239.5 L144.9,248.9 L162.0,231.6 L179.1,238.4 L196.2,229.0 L213.3,226.9 L230.4,225.5 L247.6,221.9 L264.7,230.1 L281.8,229.1 L298.9,220.6 L316.0,233.9 L333.1,234.8 L350.2,242.9 L367.3,245.9 L384.4,250.6 L401.6,256.2 L418.7,240.7 L435.8,238.9 L452.9,235.6 L470.0,233.7 L487.1,239.1 L504.2,240.9 L521.3,250.4 L538.4,214.2 L555.6,214.2 L572.7,216.1 L589.8,216.9 L606.9,224.4 L624.0,224.3 L641.1,225.5 L658.2,231.8 L675.3,228.5 L692.4,222.4 L709.6,214.8 L726.7,203.4 L743.8,204.3 L760.9,200.5 L778.0,205.3 L795.1,202.1 L812.2,194.8 L829.3,190.5 L846.4,201.0 L863.6,198.2 L880.7,203.1 L897.8,211.6 L914.9,204.1 L932.0,206.7" fill="none" stroke="#94a3b8" stroke-width="2.0"/>
+<polyline points="8.0,212.6 L24.8,211.0 L41.6,241.4 L58.4,258.8 L75.2,252.5 L92.0,219.2 L108.8,245.8 L125.6,253.6 L142.4,276.7 L159.2,301.8 L176.0,272.6 L192.8,271.1 L209.6,247.0 L226.4,254.3 L243.2,255.9 L260.0,257.8 L276.8,277.3 L293.6,273.5 L310.4,259.0 L327.2,280.1 L344.0,286.5 L360.8,296.4 L377.6,302.8 L394.4,308.3 L411.2,326.6 L428.0,301.1 L444.8,299.3 L461.6,293.7 L478.4,295.7 L495.2,305.7 L512.0,307.4 L528.8,317.6 L545.6,258.7 L562.4,269.4 L579.2,267.3 L596.0,265.7 L612.8,275.7 L629.6,269.5 L646.4,269.7 L663.2,279.6 L680.0,273.7 L696.8,265.6 L713.6,253.8 L730.4,218.2 L747.2,206.0 L764.0,206.1 L780.8,215.7 L797.6,207.0 L814.4,200.5 L831.2,200.1 L848.0,222.2 L864.8,192.0 L881.6,184.8 L898.4,177.4 L915.2,210.5 L932.0,204.1" fill="none" stroke="#f59e0b" stroke-width="2.0"/>
+<line x1="8" y1="332.0" x2="932" y2="332.0" stroke="#1e293b" stroke-width="1"/>
+<text x="936" y="336.0" font-size="10" fill="#64748b" text-anchor="end">0.69</text>
+<line x1="8" y1="251.0" x2="932" y2="251.0" stroke="#1e293b" stroke-width="1"/>
+<text x="936" y="255.0" font-size="10" fill="#64748b" text-anchor="end">0.90</text>
+<line x1="8" y1="170.0" x2="932" y2="170.0" stroke="#1e293b" stroke-width="1"/>
+<text x="936" y="174.0" font-size="10" fill="#64748b" text-anchor="end">1.11</text>
+<line x1="8" y1="89.0" x2="932" y2="89.0" stroke="#1e293b" stroke-width="1"/>
+<text x="936" y="93.0" font-size="10" fill="#64748b" text-anchor="end">1.32</text>
+<line x1="8" y1="8.0" x2="932" y2="8.0" stroke="#1e293b" stroke-width="1"/>
+<text x="936" y="12.0" font-size="10" fill="#64748b" text-anchor="end">1.53</text>
+<text x="196.2" y="338" font-size="10" fill="#64748b">2023</text>
+<text x="401.6" y="338" font-size="10" fill="#64748b">2024</text>
+<text x="606.9" y="338" font-size="10" fill="#64748b">2025</text>
+<text x="812.2" y="338" font-size="10" fill="#64748b">2026</text></svg>
+<div class="legend"><span><i class="dot" style="background:#34d399"></i>低波动Top30</span><span><i class="dot" style="background:#94a3b8"></i>市值300等权</span><span><i class="dot" style="background:#f59e0b"></i>沪深300</span></div>
+</div>
+
+<h2>📋 当前持仓：预测 vs 实际（信号月 2026-07，执行 08-03 开盘）</h2>
+<table>
+<tr><th>代码</th><th>名称</th><th>行业</th><th>买入价</th><th>最新收盘</th><th>实际涨跌</th><th>止损线(-8%)</th><th>12月波动率</th><th>近30日走势</th></tr>
+<tr><td class='mono'>601985.SH</td><td>中国核电</td><td class='dim'>新型电力</td><td class='mono'>9.14</td><td class='mono'>8.78</td><td style='color:#f87171'>-3.94%</td><td class='mono dim'>8.41</td><td class='dim'>0.028</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,23.4 8.0,26.0 12.0,21.6 16.0,21.2 20.0,21.2 24.0,25.1 28.0,23.4 32.0,19.0 36.0,22.9 40.0,19.4 44.0,6.9 48.0,11.3 52.0,6.9 56.0,6.0 60.0,14.5 64.0,16.2 68.0,16.7 72.0,11.8 76.0,6.9 80.0,7.3 84.0,8.7 88.0,13.1 92.0,18.0 96.0,17.6 100.0,18.9 104.0,16.7 108.0,15.4 112.0,18.5 116.0,18.0 120.0,19.8" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>601658.SH</td><td>邮储银行</td><td class='dim'>银行</td><td class='mono'>5.14</td><td class='mono'>4.92</td><td style='color:#f87171'>-4.28%</td><td class='mono dim'>4.73</td><td class='dim'>0.038</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,26.0 8.0,23.7 12.0,21.4 16.0,24.8 20.0,22.5 24.0,16.0 28.0,16.6 32.0,13.7 36.0,16.0 40.0,13.7 44.0,8.4 48.0,16.0 52.0,12.5 56.0,12.5 60.0,11.9 64.0,13.7 68.0,7.2 72.0,11.9 76.0,6.0 80.0,8.4 84.0,10.7 88.0,17.8 92.0,21.3 96.0,20.8 100.0,21.3 104.0,21.3 108.0,21.3 112.0,23.1 116.0,21.9 120.0,23.7" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>600905.SH</td><td>三峡能源</td><td class='dim'>新型电力</td><td class='mono'>3.89</td><td class='mono'>3.73</td><td style='color:#f87171'>-4.11%</td><td class='mono dim'>3.58</td><td class='dim'>0.042</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,18.0 8.0,22.0 12.0,22.7 16.0,26.0 20.0,22.0 24.0,22.7 28.0,20.0 32.0,20.0 36.0,20.0 40.0,18.0 44.0,9.3 48.0,8.0 52.0,6.7 56.0,6.0 60.0,11.4 64.0,12.1 68.0,13.4 72.0,11.4 76.0,8.7 80.0,8.7 84.0,6.0 88.0,10.0 92.0,14.1 96.0,15.4 100.0,17.4 104.0,16.8 108.0,16.8 112.0,17.4 116.0,17.4 120.0,20.1" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>600958.SH</td><td>东方证券</td><td class='dim'>证券</td><td class='mono'>9.13</td><td class='mono'>9.07</td><td style='color:#f87171'>-0.66%</td><td class='mono dim'>8.40</td><td class='dim'>0.043</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,6.0 8.0,13.0 12.0,19.3 16.0,17.1 20.0,22.7 24.0,26.0 28.0,22.7 32.0,16.4 36.0,19.7 40.0,22.3 44.0,16.2 48.0,15.1 52.0,20.0 56.0,15.1 60.0,24.9 64.0,16.6 68.0,17.7 72.0,10.9 76.0,12.1 80.0,12.4 84.0,10.5 88.0,11.3 92.0,11.3 96.0,15.8 100.0,16.6 104.0,12.4 108.0,14.0 112.0,13.6 116.0,12.8 120.0,17.0" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>000538.SZ</td><td>云南白药</td><td class='dim'>中成药</td><td class='mono'>52.80</td><td class='mono'>50.03</td><td style='color:#f87171'>-5.25%</td><td class='mono dim'>48.58</td><td class='dim'>0.044</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,21.9 8.0,24.7 12.0,24.6 16.0,26.0 20.0,24.0 24.0,19.8 28.0,18.5 32.0,15.2 36.0,9.3 40.0,12.4 44.0,9.6 48.0,13.4 52.0,10.9 56.0,11.2 60.0,14.3 64.0,13.7 68.0,12.4 72.0,10.3 76.0,6.5 80.0,6.0 84.0,8.5 88.0,11.2 92.0,14.7 96.0,15.6 100.0,15.3 104.0,13.4 108.0,15.0 112.0,16.3 116.0,16.7 120.0,18.6" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>601607.SH</td><td>上海医药</td><td class='dim'>医药商业</td><td class='mono'>16.79</td><td class='mono'>16.59</td><td style='color:#f87171'>-1.19%</td><td class='mono dim'>15.45</td><td class='dim'>0.044</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,19.7 8.0,24.5 12.0,24.5 16.0,26.0 20.0,25.0 24.0,21.7 28.0,17.0 32.0,12.7 36.0,9.9 40.0,11.3 44.0,6.0 48.0,10.7 52.0,8.9 56.0,11.6 60.0,15.2 64.0,13.8 68.0,14.0 72.0,11.4 76.0,8.7 80.0,7.0 84.0,7.9 88.0,10.9 92.0,13.8 96.0,14.3 100.0,9.7 104.0,9.4 108.0,9.9 112.0,12.1 116.0,8.4 120.0,11.6" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>000166.SZ</td><td>申万宏源</td><td class='dim'>证券</td><td class='mono'>4.65</td><td class='mono'>4.53</td><td style='color:#f87171'>-2.58%</td><td class='mono dim'>4.28</td><td class='dim'>0.044</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,12.4 8.0,22.4 12.0,20.5 16.0,18.7 20.0,26.0 24.0,26.0 28.0,20.5 32.0,12.4 36.0,14.2 40.0,19.6 44.0,7.8 48.0,10.5 52.0,11.5 56.0,6.0 60.0,14.2 64.0,12.4 68.0,16.9 72.0,11.5 76.0,8.7 80.0,9.6 84.0,10.5 88.0,11.5 92.0,14.2 96.0,23.3 100.0,23.3 104.0,21.5 108.0,23.3 112.0,21.5 116.0,21.5 120.0,24.2" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>600196.SH</td><td>复星医药</td><td class='dim'>化学制药</td><td class='mono'>23.24</td><td class='mono'>24.21</td><td style='color:#34d399'>+4.17%</td><td class='mono dim'>21.38</td><td class='dim'>0.044</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,13.1 8.0,21.2 12.0,23.4 16.0,23.4 20.0,18.9 24.0,15.8 28.0,13.4 32.0,6.2 36.0,7.4 40.0,19.3 44.0,13.8 48.0,16.7 52.0,14.1 56.0,16.5 60.0,26.0 64.0,21.6 68.0,22.8 72.0,19.3 76.0,17.7 80.0,17.2 84.0,17.9 88.0,17.5 92.0,19.8 96.0,21.5 100.0,12.3 104.0,8.9 108.0,6.9 112.0,7.7 116.0,6.0 120.0,8.0" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>601995.SH</td><td>中金公司</td><td class='dim'>证券</td><td class='mono'>35.05</td><td class='mono'>34.79</td><td style='color:#f87171'>-0.74%</td><td class='mono dim'>32.25</td><td class='dim'>0.045</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,12.1 8.0,17.4 12.0,19.6 16.0,13.1 20.0,18.0 24.0,22.4 28.0,22.0 32.0,6.0 36.0,16.4 40.0,22.4 44.0,19.0 48.0,20.4 52.0,20.3 56.0,15.3 60.0,21.1 64.0,19.1 68.0,26.0 72.0,23.8 76.0,23.3 80.0,22.7 84.0,23.1 88.0,23.5 92.0,20.6 96.0,25.0 100.0,25.1 104.0,24.6 108.0,24.9 112.0,23.2 116.0,22.4 120.0,25.6" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr><tr><td class='mono'>600900.SH</td><td>长江电力</td><td class='dim'>水力发电</td><td class='mono'>28.99</td><td class='mono'>28.10</td><td style='color:#f87171'>-3.07%</td><td class='mono dim'>26.67</td><td class='dim'>0.047</td><td><svg width="124" height="32" viewBox="0 0 124 32"><polyline points="4.0,26.0 8.0,24.6 12.0,21.9 16.0,22.3 20.0,20.7 24.0,18.2 28.0,17.4 32.0,16.5 36.0,19.3 40.0,15.8 44.0,9.3 48.0,11.0 52.0,8.6 56.0,9.6 60.0,9.9 64.0,13.4 68.0,8.7 72.0,9.7 76.0,6.0 80.0,8.6 84.0,8.9 88.0,13.8 92.0,17.3 96.0,17.4 100.0,17.4 104.0,15.4 108.0,13.7 112.0,15.6 116.0,14.2 120.0,15.1" fill="none" stroke="#38bdf8" stroke-width="1.5"/></svg></td></tr>
+</table>
+<div class="note">「预测」= 规则给出的买点与历史月内区间（p5/p95：-3.84% ~ +7.70%）；「实际」= 截至 08-13 收盘的已实现涨跌。规则不预测点位；历史区间只是参考，不是承诺。当前无一触发止损。</div>
+
+<div class="grid2" style="margin-top:14px">
+<div class="card"><h2 style="margin-top:0">📅 下周</h2>
+<div class="sub">交易日：08-17 08-18 08-19 08-20 08-21（全部开市）<br>动作：无信号，继续持有至 08-31 收盘后换仓<br>触发条件：任一持仓收盘跌破止损线即卖出</div></div>
+<div class="card"><h2 style="margin-top:0">🧪 影子盘协议</h2>
+<div class="sub">① 每日收盘后记录持仓收盘价<br>② 偏差 &lt;50bp/月、信号可复现、无未来函数<br>③ 连续 ≥4 周通过 → 才允许 1万本金 top5 实盘<br>当前影子盘进度：第 2 周</div></div>
+</div>
+
+<div class="note" style="border-left-color:#f87171">⚠️ 诚实声明：低波动规则收益集中于 2023-2024，2025-2026 走平；历史最大单周 -5.04%、最大回撤约 -20%。任何月份都可能亏损，这不是收益承诺。</div>
+</div></body></html>
