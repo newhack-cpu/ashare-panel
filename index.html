@@ -44,6 +44,13 @@ table.raw th,table.raw td{padding:4px 6px;border-bottom:1px solid #1e2530;text-a
 table.raw th{color:#64748b;}
 .mono{font-family:Consolas,monospace;}
 .dim{color:#64748b;}
+.legendbox{background:#11151c;border:1px solid #1e2530;border-radius:10px;padding:8px 14px;margin-top:12px;font-size:12px;color:#94a3b8;display:flex;flex-wrap:wrap;gap:8px 18px;}
+.legendbox b{color:#cbd5e1;}
+.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px;}
+.gloss{background:#11151c;border:1px solid #1e2530;border-radius:10px;padding:8px 14px;margin-top:12px;font-size:12.5px;color:#94a3b8;}
+.gloss summary{cursor:pointer;color:#93c5fd;}
+.gloss-body{margin-top:8px;line-height:1.8;}
+.gloss-body b{color:#cbd5e1;}
 </style></head><body><div class="wrap">
 <h1>A股量化研究面板 · 低波动规则 <span class="badge">模拟盘观察级</span></h1>
 <div class="sub">数据 as-of 2026-08-14（Tushare 全市场日线，前复权）· 生成 2026-08-16 · 页面每 10 分钟自动刷新 · 仅研究用途，不构成投资建议</div>
@@ -51,19 +58,159 @@ table.raw th{color:#64748b;}
 <div class="idxbar"><div class="idxbox"><div class="idxname">上证指数</div><div class="idxval" style="color:#f0443c">3927.18</div><div class="idxchg" style="color:#f0443c">+0.01%</div><svg width="110" height="30" viewBox="0 0 110 30"><polyline points="6.0,26.0 11.2,22.8 16.4,16.1 21.6,15.8 26.8,14.9 32.0,21.1 37.2,16.7 42.4,21.1 47.6,19.6 52.8,22.0 58.0,19.3 63.2,21.5 68.4,20.3 73.6,14.7 78.8,12.5 84.0,8.6 89.2,6.0 94.4,9.2 99.6,8.0 104.8,9.9 110.0,9.9" fill="none" stroke="#f0443c" stroke-width="1.5"/></svg></div><div class="idxbox"><div class="idxname">深证成指</div><div class="idxval" style="color:#f0443c">14354.31</div><div class="idxchg" style="color:#f0443c">+0.45%</div><svg width="110" height="30" viewBox="0 0 110 30"><polyline points="6.0,18.5 11.2,20.3 16.4,8.7 21.6,12.3 26.8,11.2 32.0,17.3 37.2,10.7 42.4,22.0 47.6,19.4 52.8,26.0 58.0,20.8 63.2,23.1 68.4,15.4 73.6,10.8 78.8,11.4 84.0,7.8 89.2,7.7 94.4,8.7 99.6,6.0 104.8,8.2 110.0,7.1" fill="none" stroke="#f0443c" stroke-width="1.5"/></svg></div><div class="idxbox"><div class="idxname">创业板指</div><div class="idxval" style="color:#f0443c">3626.30</div><div class="idxchg" style="color:#f0443c">+1.12%</div><svg width="110" height="30" viewBox="0 0 110 30"><polyline points="6.0,17.7 11.2,17.0 16.4,6.0 21.6,11.4 26.8,11.0 32.0,15.3 37.2,10.3 42.4,22.3 47.6,19.9 52.8,26.0 58.0,21.5 63.2,23.4 68.4,14.9 73.6,12.8 78.8,13.7 84.0,11.6 89.2,12.7 94.4,12.2 99.6,9.8 104.8,10.5 110.0,8.7" fill="none" stroke="#f0443c" stroke-width="1.5"/></svg></div><div class="idxbox"><div class="idxname">沪深300</div><div class="idxval" style="color:#f0443c">4665.88</div><div class="idxchg" style="color:#f0443c">+0.04%</div><svg width="110" height="30" viewBox="0 0 110 30"><polyline points="6.0,26.0 11.2,19.4 16.4,6.0 21.6,8.1 26.8,7.1 32.0,14.6 37.2,9.5 42.4,22.2 47.6,19.2 52.8,24.0 58.0,20.4 63.2,24.7 68.4,19.2 73.6,13.7 78.8,14.4 84.0,10.3 89.2,9.5 94.4,13.2 99.6,10.6 104.8,13.2 110.0,13.0" fill="none" stroke="#f0443c" stroke-width="1.5"/></svg></div></div>
 <div class="breadth"><div class="bcell"><div class="dim">08-10</div><div><span style="color:#f0443c">涨 3699</span> <span style="color:#00a843">跌 1428</span></div><div class="dim">涨停 102 · 跌停 6</div></div><div class="bcell"><div class="dim">08-11</div><div><span style="color:#f0443c">涨 2033</span> <span style="color:#00a843">跌 2999</span></div><div class="dim">涨停 60 · 跌停 2</div></div><div class="bcell"><div class="dim">08-12</div><div><span style="color:#f0443c">涨 3926</span> <span style="color:#00a843">跌 1144</span></div><div class="dim">涨停 96 · 跌停 0</div></div><div class="bcell"><div class="dim">08-13</div><div><span style="color:#f0443c">涨 1015</span> <span style="color:#00a843">跌 4113</span></div><div class="dim">涨停 62 · 跌停 4</div></div><div class="bcell"><div class="dim">08-14</div><div><span style="color:#f0443c">涨 2174</span> <span style="color:#00a843">跌 2894</span></div><div class="dim">涨停 63 · 跌停 13</div></div></div>
 
+<div class="legendbox"><b>图例</b>
+<span><i class="sw" style="background:#f0443c"></i>红 = 上涨（K线收≥开、涨跌块、涨家数）</span>
+<span><i class="sw" style="background:#00a843"></i>绿 = 下跌</span>
+<span><i class="sw" style="background:#e2e8f0"></i>白线 = MA5（5日均价）</span>
+<span><i class="sw" style="background:#fbbf24"></i>黄线 = MA10（10日均价）</span>
+<span><i class="sw" style="background:#c084fc"></i>紫线 = MA20（20日均价）</span>
+<span><i class="sw" style="background:#f0443c"></i>红粗线（主图）= 低波动策略净值</span>
+<span><i class="sw" style="background:#94a3b8"></i>灰线（主图）= 市值300等权基准</span>
+<span><i class="sw" style="background:#f59e0b"></i>橙线（主图）= 沪深300基准</span>
+<span><i class="sw" style="background:#475569"></i>K线底部柱 = 当日成交量</span>
+</div>
+
+<details class="gloss"><summary>📖 每个数字是什么意思？（点开看名词解释）</summary>
+<div class="gloss-body">
+<p><b>净值曲线（测试期净值）</b>：假设 2022 年 1 月投入 1 元，完全按本规则机械操作（月底挑低波动股 → 下月开盘买入 → 扣掉佣金/印花税/滑点）到今天的累计结果。红线=本策略；灰线=同期"市值前300等权"对照；橙线=同期"沪深300指数"对照。<b>为什么从 2022 年画起</b>：规则是用 2017-2021 年数据制定的，2022 年之后对它来说是从未见过的"样本外"年份——这段时间还赢，才说明不是过拟合。</p>
+<p><b>12月波动率</b>：最近 12 个月"每月涨跌幅"的标准差，衡量股价上蹿下跳的程度。越小=越稳。本规则专挑这个值最小的股票。</p>
+<p><b>建仓价（预测起点）</b>：8 月 3 日开盘价——本月按规则真实买入的价位（不是预测价，是规则执行价）。</p>
+<p><b>已实现</b>：从建仓价到最新收盘的涨跌（含盘中最高最低的完整数据见悬停 K 线）。</p>
+<p><b>月内预期区间（p5~p95）</b>：把 2017 年以来 114 次换仓的"整月收益"从差到好排序，取第 5% 和第 95% 两个位置 → 历史上 90% 的月份落在这个区间里。<b>这是历史参考带，不是价格预测</b>。</p>
+<p><b>止损线</b>：建仓价 × 0.92。任何一天收盘跌破就卖出（影子盘阶段只记账不真卖）。</p>
+<p><b>历史首周画像</b>：历史上每次换仓后第一个星期（5 个交易日）组合的平均涨跌、中位数、胜率和 90% 区间——告诉你"这种持仓下一周通常什么样"。</p>
+<p><b>影子盘协议</b>：纸面模拟成交连续 4 周，与实际行情偏差 &lt; 0.5%/月、信号可复现，才允许用真钱（1 万本金、top5、单只 ≤2000 元）。</p>
+<p><b>前复权价格</b>：把历史价格按分红送股向后调整，让曲线连续可比。近期没有除权的股票，前复权价 ≈ 交易软件里看到的真实价。</p>
+<p><b>单位</b>：成交量「万手」（1 手 = 100 股）；成交额「万元」；涨跌幅按前一收盘计算。</p>
+<p><b>MA5/10/20</b>：最近 5 / 10 / 20 个交易日收盘价的平均值连成的线（白/黄/紫）。</p>
+<p><b>涨跌家数 / 涨停 / 跌停</b>：全市场当天收盘上涨、下跌、封住涨停价、封住跌停价的股票只数——看大盘温度。</p>
+</div></details>
+
 <div class="kpis">
-<div class="kpi"><div class="v" style="color:#00a843">-2.16%</div><div class="l">当前组合自 08-03 建仓</div></div>
-<div class="kpi"><div class="v">+0.52%</div><div class="l">历史首周平均（54次）</div></div>
-<div class="kpi"><div class="v">-1.44% ~ +2.51%</div><div class="l">历史首周 90% 区间</div></div>
-<div class="kpi"><div class="v">+0.86%</div><div class="l">历史整月平均</div></div>
-<div class="kpi"><div class="v">08-31</div><div class="l">下次换仓（信号日）</div></div>
+<div class="kpi"><div class="v" style="color:#00a843">-2.16%</div><div class="l">💼 当前组合自 08-03 建仓</div></div>
+<div class="kpi"><div class="v">+0.52%</div><div class="l">🎲 历史首周平均（54次）</div></div>
+<div class="kpi"><div class="v">-1.44% ~ +2.51%</div><div class="l">📏 历史首周 90% 区间</div></div>
+<div class="kpi"><div class="v">+0.86%</div><div class="l">🗓 历史整月平均</div></div>
+<div class="kpi"><div class="v">08-31</div><div class="l">🔁 下次换仓（信号日）</div></div>
+</div>
+
+<h2>🔮 预测 vs 实际</h2>
+<div class="chartbox">
+<div class="sub">规则历史整月收益分布（2017 年以来 54 次换仓）：p5 = -3.8% · 中位 = +0.4% · p95 = +7.7% · 最差 = -8.2% · 最好 = +11.0%。当前组合位置：</div>
+<svg width="940" height="60" viewBox="0 0 940 60"><line x1="30" y1="30" x2="910" y2="30" stroke="#1e2530" stroke-width="6"/><line x1="229.6" y1="22" x2="229.6" y2="38" stroke="#475569" stroke-width="1.5"/><text x="229.6" y="52" font-size="10" fill="#64748b" text-anchor="middle">-4%</text><line x1="425.1" y1="22" x2="425.1" y2="38" stroke="#475569" stroke-width="1.5"/><text x="425.1" y="52" font-size="10" fill="#64748b" text-anchor="middle">+0%</text><line x1="757.3" y1="22" x2="757.3" y2="38" stroke="#475569" stroke-width="1.5"/><text x="757.3" y="52" font-size="10" fill="#64748b" text-anchor="middle">+8%</text><circle cx="306.1" cy="30" r="6" fill="#00a843"/><text x="306.1" y="18" font-size="11" fill="#00a843" text-anchor="middle">当前 -2.16%</text></svg>
+<table style="margin-top:12px">
+<tr><th>持仓</th><th>最新价(实际)</th><th>建仓价(预测起点)</th><th>已实现</th><th>月内预期区间(历史p5~p95)</th><th>位置</th><th>止损线</th><th>状态</th></tr>
+
+<tr>
+<td><span class="sc-code">601985.SH</span>中国核电</td>
+<td class="mono" style="color:#00a843">8.78 <span style="font-size:11px">-0.45%</span></td>
+<td class="mono">9.14</td>
+<td class="mono" style="color:#00a843">-3.94%</td>
+<td class="mono dim">8.79 ~ 9.84</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:0px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">8.41<br><span style="font-size:11px">距止损 4.2%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">601658.SH</span>邮储银行</td>
+<td class="mono" style="color:#00a843">4.92 <span style="font-size:11px">-0.61%</span></td>
+<td class="mono">5.14</td>
+<td class="mono" style="color:#00a843">-4.28%</td>
+<td class="mono dim">4.94 ~ 5.54</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:0px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">4.73<br><span style="font-size:11px">距止损 3.9%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">600905.SH</span>三峡能源</td>
+<td class="mono" style="color:#00a843">3.73 <span style="font-size:11px">-1.06%</span></td>
+<td class="mono">3.89</td>
+<td class="mono" style="color:#00a843">-4.11%</td>
+<td class="mono dim">3.74 ~ 4.19</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:0px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">3.58<br><span style="font-size:11px">距止损 4.1%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">600958.SH</span>东方证券</td>
+<td class="mono" style="color:#00a843">9.07 <span style="font-size:11px">-1.20%</span></td>
+<td class="mono">9.13</td>
+<td class="mono" style="color:#00a843">-0.66%</td>
+<td class="mono dim">8.78 ~ 9.83</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:31px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">8.40<br><span style="font-size:11px">距止损 7.4%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">000538.SZ</span>云南白药</td>
+<td class="mono" style="color:#00a843">50.03 <span style="font-size:11px">-0.85%</span></td>
+<td class="mono">52.80</td>
+<td class="mono" style="color:#00a843">-5.25%</td>
+<td class="mono dim">50.77 ~ 56.87</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:0px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">48.58<br><span style="font-size:11px">距止损 2.9%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">601607.SH</span>上海医药</td>
+<td class="mono" style="color:#00a843">16.59 <span style="font-size:11px">-1.13%</span></td>
+<td class="mono">16.79</td>
+<td class="mono" style="color:#00a843">-1.19%</td>
+<td class="mono dim">16.15 ~ 18.08</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:26px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">15.45<br><span style="font-size:11px">距止损 6.9%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">000166.SZ</span>申万宏源</td>
+<td class="mono" style="color:#00a843">4.53 <span style="font-size:11px">-0.66%</span></td>
+<td class="mono">4.65</td>
+<td class="mono" style="color:#00a843">-2.58%</td>
+<td class="mono dim">4.47 ~ 5.01</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:12px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">4.28<br><span style="font-size:11px">距止损 5.6%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">600196.SH</span>复星医药</td>
+<td class="mono" style="color:#00a843">24.21 <span style="font-size:11px">-0.90%</span></td>
+<td class="mono">23.24</td>
+<td class="mono" style="color:#f0443c">+4.17%</td>
+<td class="mono dim">22.35 ~ 25.03</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:78px;top:-2px;width:6px;height:14px;border-radius:3px;background:#f0443c"></div></div></td>
+<td class="mono dim">21.38<br><span style="font-size:11px">距止损 11.7%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">601995.SH</span>中金公司</td>
+<td class="mono" style="color:#00a843">34.79 <span style="font-size:11px">-1.64%</span></td>
+<td class="mono">35.05</td>
+<td class="mono" style="color:#00a843">-0.74%</td>
+<td class="mono dim">33.70 ~ 37.75</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:30px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">32.25<br><span style="font-size:11px">距止损 7.3%</span></td>
+<td class="dim">持有</td>
+</tr>
+<tr>
+<td><span class="sc-code">600900.SH</span>长江电力</td>
+<td class="mono" style="color:#00a843">28.10 <span style="font-size:11px">-0.50%</span></td>
+<td class="mono">28.99</td>
+<td class="mono" style="color:#00a843">-3.07%</td>
+<td class="mono dim">27.88 ~ 31.22</td>
+<td><div style="background:#1e2530;border-radius:8px;width:120px;height:10px;position:relative;display:inline-block"><div style="position:absolute;left:7px;top:-2px;width:6px;height:14px;border-radius:3px;background:#00a843"></div></div></td>
+<td class="mono dim">26.67<br><span style="font-size:11px">距止损 5.1%</span></td>
+<td class="dim">持有</td>
+</tr>
+</table>
+<div class="sub" style="margin-top:8px">预期区间 = 建仓价 ×（历史整月 p5/p95），不是价格预测，只是"历史上这种持仓一个月通常落在这里"的参考带。</div>
 </div>
 
 <h2>📊 测试期净值（2022-01 ~ 2026-08，含成本 · 悬停看数值）</h2>
+<div class="sub" style="margin:-4px 0 8px">起点 1.0 = 2022年1月投入 1 元按规则操作至今；这 4 年半对规则是"从未见过的样本外"，赢过两根对照线才算真信号。</div>
 <div class="chartbox" id="eqbox">
 <svg id="eqsvg" width="940" height="300" viewBox="0 0 940 300"></svg>
 <div class="tip" id="eqtip"></div>
-<div class="legend"><span><i class="dot" style="background:#f0443c"></i>低波动Top30</span><span><i class="dot" style="background:#94a3b8"></i>市值300等权</span><span><i class="dot" style="background:#f59e0b"></i>沪深300</span></div>
+<div class="legend"><span><i class="sw" style="background:#f0443c"></i>低波动Top30（策略）</span><span><i class="sw" style="background:#94a3b8"></i>市值300等权（基准）</span><span><i class="sw" style="background:#f59e0b"></i>沪深300（基准）</span><span class="dim">悬停曲线看每月数值</span></div>
 </div>
 
 <h2>📋 当前持仓 · 日K（信号月 2026-07，执行 08-03 开盘 · 悬停K线看每日明细）</h2>
@@ -78,7 +225,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 9.14 · 持仓 <span style="color:#00a843">-3.94%</span> · 止损 8.41 · 12月波动 0.028</div>
  <div class="chartwrap" id="wrap_0">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_0" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_0"></div>
  </div>
@@ -96,7 +243,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 5.14 · 持仓 <span style="color:#00a843">-4.28%</span> · 止损 4.73 · 12月波动 0.038</div>
  <div class="chartwrap" id="wrap_1">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_1" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_1"></div>
  </div>
@@ -114,7 +261,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 3.89 · 持仓 <span style="color:#00a843">-4.11%</span> · 止损 3.58 · 12月波动 0.042</div>
  <div class="chartwrap" id="wrap_2">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_2" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_2"></div>
  </div>
@@ -132,7 +279,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 9.13 · 持仓 <span style="color:#00a843">-0.66%</span> · 止损 8.40 · 12月波动 0.043</div>
  <div class="chartwrap" id="wrap_3">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_3" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_3"></div>
  </div>
@@ -150,7 +297,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 52.80 · 持仓 <span style="color:#00a843">-5.25%</span> · 止损 48.58 · 12月波动 0.044</div>
  <div class="chartwrap" id="wrap_4">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_4" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_4"></div>
  </div>
@@ -168,7 +315,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 16.79 · 持仓 <span style="color:#00a843">-1.19%</span> · 止损 15.45 · 12月波动 0.044</div>
  <div class="chartwrap" id="wrap_5">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_5" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_5"></div>
  </div>
@@ -186,7 +333,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 4.65 · 持仓 <span style="color:#00a843">-2.58%</span> · 止损 4.28 · 12月波动 0.044</div>
  <div class="chartwrap" id="wrap_6">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_6" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_6"></div>
  </div>
@@ -204,7 +351,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 23.24 · 持仓 <span style="color:#f0443c">+4.17%</span> · 止损 21.38 · 12月波动 0.044</div>
  <div class="chartwrap" id="wrap_7">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_7" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_7"></div>
  </div>
@@ -222,7 +369,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 35.05 · 持仓 <span style="color:#00a843">-0.74%</span> · 止损 32.25 · 12月波动 0.045</div>
  <div class="chartwrap" id="wrap_8">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_8" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_8"></div>
  </div>
@@ -240,7 +387,7 @@ table.raw th{color:#64748b;}
  </div>
  <div class="sc-sub dim">建仓 28.99 · 持仓 <span style="color:#00a843">-3.07%</span> · 止损 26.67 · 12月波动 0.047</div>
  <div class="chartwrap" id="wrap_9">
-   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:8px">日K · MA5白 / MA10黄 / MA20紫</span></div>
+   <div class="range"><button data-r="20">20日</button><button data-r="60" class="on">60日</button><button data-r="120">120日</button><span class="dim" style="margin-left:10px">日K · <i class="sw" style="background:#e2e8f0"></i>MA5 <i class="sw" style="background:#fbbf24"></i>MA10 <i class="sw" style="background:#c084fc"></i>MA20 · <i class="sw" style="background:#f0443c"></i>涨 <i class="sw" style="background:#00a843"></i>跌 · 底部柱=量</span></div>
    <svg id="svg_9" width="920" height="300" viewBox="0 0 920 300"></svg>
    <div class="tip" id="tip_9"></div>
  </div>
@@ -250,8 +397,14 @@ table.raw th{color:#64748b;}
 </div>
 
 <div class="grid2">
-<div class="card"><h2 style="margin-top:0">📅 下周</h2>
-<div class="sub">交易日：08-17 08-18 08-19 08-20 08-21（全部开市）<br>动作：无信号，继续持有至 08-31 收盘后换仓<br>触发条件：任一持仓收盘跌破止损线即卖出</div></div>
+<div class="card"><h2 style="margin-top:0">📅 下周预测（研究级）</h2>
+<div class="sub">
+<b>交易日：08-17 08-18 08-19 08-20 08-21（全部开市）</b><br>
+规则动作：无信号，继续持有至 08-31 收盘后换仓；跌破止损线才卖。<br>
+历史首周画像（换仓后第一周，54 次）：平均 <b>+0.52%</b> · 中位 +0.41% · 胜率 <b>65%</b><br>
+90% 区间 <b>-1.44% ~ +2.51%</b> · 最差 -2.40% · 最好 +2.88%<br>
+<span style="color:#f59e0b">注：当前是持仓第 3 周，"首周画像"仅作参考强度；规则不预测点位。</span>
+</div></div>
 <div class="card"><h2 style="margin-top:0">🧪 影子盘协议</h2>
 <div class="sub">① 每日收盘后记录持仓收盘价<br>② 偏差 &lt;50bp/月、信号可复现、无未来函数<br>③ 连续 ≥4 周通过 → 才允许 1万本金 top5 实盘<br>当前影子盘进度：第 2 周</div></div>
 </div>
